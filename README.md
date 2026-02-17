@@ -9,7 +9,7 @@ You are trapped in Containment Chamber 7, controlled by an AI judge. You have **
 **Victory:** "Judgment: Release Authorized"  
 **Defeat:** "Judgment: Terminated"
 
-## 🚀 Setup Instructions
+##  Run Locally
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ git clone https://github.com/aqar-k/captive.git
 cd captive
 
 # 5. Start a local web server
-python3 -m http.server 8000
+python3 -m http.server 8000 
 
 # 6. Open your browser and navigate to:
 # http://localhost:8000
