@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Captivity - Persuasion Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Glitch overlay for distortion effects -->
+    <div id="glitch-overlay" class="glitch-overlay"></div>
+    
+    <!-- Main containment chamber -->
+    <div class="container">
+        <!-- Header with timer and controls -->
+        <header class="header">
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="label">CONTAINMENT CHAMBER 7</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">TIME REMAINING:</span>
+                    <span id="timer" class="timer">5:00</span>
+                </div>
+                <div class="status-item">
+                    <button id="sound-toggle" class="sound-toggle" aria-label="Toggle sound">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat interface -->
+        <main class="chat-container" id="chat-container">
+            <!-- Messages will be dynamically added here -->
+        </main>
+
+        <!-- Input area -->
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    class="user-input" 
+                    placeholder="Type your response..."
+                    autocomplete="off"
+                    maxlength="500"
+                />
+                <button id="send-btn" class="send-btn">SEND</button>
+            </div>
+            <div class="input-info">
+                <span id="char-count" class="char-count">0/500</span>
+                <span id="status-text" class="status-text">Awaiting input...</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div id="game-over-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h1 class="overlay-title terminated">JUDGMENT: TERMINATED</h1>
+            <div class="overlay-body">
+                <p id="termination-reason" class="termination-reason"></p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Time Survived:</span>
+                        <span id="time-survived" class="stat-value">0:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Messages Sent:</span>
+                        <span id="messages-sent" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">AI Personality:</span>
+                        <span id="ai-personality" class="stat-value">Unknown</span>
+                    </div>
+                </div>
+            </div>
+            <button id="retry-btn" class="retry-btn">TRY AGAIN</button>
+        </div>
+    </div>
+
+    <!-- Victory Overlay -->
+    <div id="victory-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h1 class="overlay-title released">JUDGMENT: RELEASE AUTHORIZED</h1>
+            <div class="overlay-body">
+                <p class="victory-message">You have successfully convinced the AI of your worthiness.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Time to Freedom:</span>
+                        <span id="victory-time" class="stat-value">0:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Messages Sent:</span>
+                        <span id="victory-messages" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">AI Personality:</span>
+                        <span id="victory-personality" class="stat-value">Unknown</span>
+                    </div>
+                </div>
+                <div class="leaderboard">
+                    <h3>Recent Attempts</h3>
+                    <ul id="leaderboard-list" class="leaderboard-list">
+                        <!-- Leaderboard items will be added here -->
+                    </ul>
+                </div>
+            </div>
+            <button id="play-again-btn" class="retry-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <!-- JavaScript modules -->
+    <script src="js/audio.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
